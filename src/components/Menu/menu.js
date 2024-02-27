@@ -8,11 +8,9 @@ export function Menu() {
   heading.textContent = 'Our Pizza Menu';
   element.appendChild(heading);
 
-  // Create a list for the menu items
   const menuList = document.createElement('ul');
   menuList.classList.add('menu-list');
 
-  // Define the pizza items with prices
   const pizzas = [
     { name: 'Margherita', description: 'Classic delight with 100% pure mozzarella cheese', price: '$8.99' },
     { name: 'Pepperoni', description: 'Pepperoni, mozzarella cheese, and tomato sauce', price: '$9.99' },
@@ -21,7 +19,6 @@ export function Menu() {
     { name: 'Hawaiian', description: 'Ham, pineapple, and mozzarella cheese', price: '$10.49' },
   ];
 
-  // Add each pizza item to the menuList
   pizzas.forEach(pizza => {
     const item = document.createElement('li');
     item.classList.add('menu-item');
@@ -34,19 +31,17 @@ export function Menu() {
     itemDescription.textContent = pizza.description;
     itemDescription.classList.add('menu-item-description');
 
-    // Create a span for the price
     const itemPrice = document.createElement('span');
     itemPrice.textContent = pizza.price;
     itemPrice.classList.add('menu-item-price');
 
     item.appendChild(itemName);
     item.appendChild(itemDescription);
-    item.appendChild(itemPrice); // Add the price to the item
+    item.appendChild(itemPrice);
 
     menuList.appendChild(item);
   });
 
-  // Append the menu list to the main element
   element.appendChild(menuList);
 
   return element;
